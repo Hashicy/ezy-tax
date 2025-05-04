@@ -1,0 +1,256 @@
+/* Global Settings */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: linear-gradient(45deg, #ffd5a6, #ff9f8e, #ffcc99, #ff8364); /* Pastel orange and red gradient */
+  background-size: 400% 400%; /* Ensures the gradient spans across the whole area */
+  animation: gradientMove 15s ease infinite; /* Animation to move the gradient */
+  text-align: center;
+  position: relative;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff; /* White text to contrast against the vibrant background */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8); /* Lighter text for contrast */
+  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 600px;
+  animation: fadeIn 2s ease-out;
+}
+
+.description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  animation: fadeIn 2.5s ease-out;
+  justify-content: center;
+}
+
+
+
+.primary-btn,
+.secondary-btn {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #AC3B61; /* Your color */
+  color: #fff;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border: 2px solid #AC3B61; /* Border color matches the button */
+  color: #AC3B61;
+}
+
+.primary-btn:hover {
+  background-color: #9e2a4e; /* Slightly darker shade for hover */
+}
+
+.secondary-btn:hover {
+  background-color: #AC3B61;
+  color: white;
+}
+
+
+/* Image (Optional) */
+.hero-image {
+  max-width: 600px;
+  margin-top: 40px;
+  z-index: 1;
+}
+
+.hero-image img {
+  max-width: 100%;
+  opacity: 0.8;
+  animation: floatUp 4s ease-in-out infinite;
+}
+
+/* Image Animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Down Arrow */
+.hero::after {
+  content: "↓";
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #ff9f8e;
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    gap: 15px;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-image {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-image {
+    max-width: 400px;
+  }
+
+  .hero::after {
+    font-size: 1.5rem;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-image {
+    max-width: 350px;
+  }
+
+  .hero::after {
+    font-size: 1.2rem;
+    bottom: 15px;
+  }
+}

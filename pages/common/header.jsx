@@ -21,10 +21,10 @@ export default function Header() {
 
         {/* Center: Navigation */}
         <nav className="nav-center">
-          <a href="#">Blog</a>
           <a href="#">Home</a>
-          <a href="#">About Us</a>
           <a href="#">Products</a>
+          <a href="#">Blog</a>
+          <a href="#">About Us</a>
         </nav>
 
         {/* Right: Logout */}
@@ -44,10 +44,10 @@ export default function Header() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="mobile-menu">
-          <a href="#">Blog</a>
           <a href="#">Home</a>
-          <a href="#">About Us</a>
           <a href="#">Products</a>
+          <a href="#">Blog</a>
+          <a href="#">About Us</a>
           <button className="logout-btn">Login</button>
         </div>
       )}

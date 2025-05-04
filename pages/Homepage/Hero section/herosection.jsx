@@ -2,15 +2,16 @@ import "./Hero.css";
 
 export default function Hero() {
   return (
-    <div class="hero">
+    <div className="hero">
   <h1>Empowering Taxpayers. Building the Nation.</h1>
-  <p>Seamless, Transparent, and AI-Powered Tax Solutions for Every Indian</p>
-  <p class="description">EZY Tax is your next-generation platform designed to simplify tax filing, maximize your savings, and ensure complete peace of mind.</p>
-  <div class="hero-buttons">
-    <button class="primary-btn">Get Started</button>
-    <button class="secondary-btn">Learn More</button>
+  <p>Seamless and Transparent Solutions for Every Indian</p>
+  <p className="description">EZY Tax is your next-generation platform designed to simplify tax filing, maximize your savings, and ensure complete peace of mind.</p>
+  <div className="hero-buttons">
+    <button className="primary-btn">Get Started</button>
+  <a href="#Services"><button className="secondary-btn">Learn More</button></a>
+
   </div>
-  <div class="hero-image">
+  <div className="hero-image">
    
   </div>
 </div>

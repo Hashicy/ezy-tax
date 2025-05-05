@@ -45,8 +45,10 @@
     padding: 1.2rem 1.5rem;
     box-shadow: 0 4px 12px rgba(172, 59, 97, 0.1);
     width: 180px;
+    height: 150px; 
     transition: none;
   }
+  
   
   /* Asymmetrical layout with margin offsets */
   .card-0 { margin-top: 0rem; }

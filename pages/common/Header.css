@@ -1,107 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Meddon&display=swap');
-
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #EEE2DC;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  padding: 20px 0;
+  background: white;
+  z-index: 1000;
   transition: all 0.3s ease;
-  z-index: 999;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .header.scrolled {
-  padding: 10px 0;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: auto;
+  padding: 0 1rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  position: relative;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-/* Left: Logo */
 .logo {
+  font-size: 1.8rem;
   font-family: 'Meddon', cursive;
-  font-size: 2.2rem;
-  color: #AC3B61;
-  flex-shrink: 0;
+  color: #ac3b61;
+  flex: 1;
 }
 
-/* Center: Navigation */
 .nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
-  gap: 50px; /* More spacing */
+  gap: 2rem;
+  justify-content: center;
+  flex: 2;
 }
 
 .nav-center a {
-  color: #123C69;
   text-decoration: none;
+  color: #333;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 .nav-center a:hover {
-  color: #AC3B61;
+  color: #ac3b61;
 }
 
-/* Right: Logout */
 .nav-right {
-  flex-shrink: 0;
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  justify-content: flex-end;
 }
 
-.logout-btn {
-  background-color: #AC3B61;
-  color: white;
+.login-btn,
+.signup-btn {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.9rem;
   border: none;
-  padding: 8px 14px;
-  font-size: 0.95rem;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
-.logout-btn:hover {
-  background-color: #123C69;
+.login-btn {
+  background-color: transparent;
+  color: #ac3b61;
+  border: 2px solid #ac3b61;
 }
 
-/* Mobile Menu Toggle */
+.login-btn:hover {
+  background-color: #ac3b61;
+  color: #fff;
+}
+
+.signup-btn {
+  background-color: #ac3b61;
+  color: white;
+  border: 2px solid #ac3b61;
+}
+
+.signup-btn:hover {
+  background-color: #922b52;
+  border-color: #922b52;
+}
+
 .menu-toggle {
   display: none;
-  font-size: 28px;
+  font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
-  color: #123C69;
 }
 
-/* Mobile Dropdown */
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background-color: #EEE2DC;
-  padding: 15px 20px;
+  gap: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
 }
 
-.mobile-menu a {
-  color: #123C69;
-  text-decoration: none;
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.mobile-menu .logout-btn {
-  margin-top: 10px;
-}
-
-/* Responsive for mobile */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .nav-center,
   .nav-right {
@@ -114,5 +120,21 @@
 
   .mobile-menu {
     display: flex;
+  }
+
+  .mobile-menu a {
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .mobile-menu .login-btn,
+  .mobile-menu .signup-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .container {
+    flex-wrap: nowrap;
   }
 }

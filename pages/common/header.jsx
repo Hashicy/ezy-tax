@@ -16,10 +16,9 @@ export default function Header() {
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
-        {/* Left: Logo */}
+
         <div className="logo">Ezy-tax</div>
 
-        {/* Center: Navigation */}
         <nav className="nav-center">
           <a href="#">Home</a>
           <a href="#">Products</a>
@@ -27,12 +26,11 @@ export default function Header() {
           <a href="#">About Us</a>
         </nav>
 
-        {/* Right: Logout */}
         <div className="nav-right">
-          <button className="logout-btn">Login</button>
+          <button className="login-btn">Login</button>
+          <button className="signup-btn">Sign Up</button>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           className="menu-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -41,14 +39,14 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="mobile-menu">
           <a href="#">Home</a>
           <a href="#">Products</a>
           <a href="#">Blog</a>
           <a href="#">About Us</a>
-          <button className="logout-btn">Login</button>
+          <button className="login-btn">Login</button>
+          <button className="signup-btn">Sign Up</button>
         </div>
       )}
     </header>

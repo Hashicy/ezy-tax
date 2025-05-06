@@ -190,10 +190,6 @@ body {
     gap: 12px;
   }
 
-  .hero-image {
-    max-width: 400px;
-  }
-
   .hero::after {
     font-size: 1.5rem;
     bottom: 20px;

@@ -1,0 +1,42 @@
+.get-started-section {
+    background: linear-gradient(135deg, #fbe8e4, #fff7f3);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  
+  .get-started-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 12px 30px rgba(172, 59, 97, 0.1);
+  }
+  
+  .get-started-heading {
+    font-size: 2.5rem;
+    color: #ac3b61;
+    margin-bottom: 1rem;
+  }
+  
+  .get-started-subtext {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+  
+  .get-started-button {
+    background-color: #ac3b61;
+    color: white;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .get-started-button:hover {
+    background-color: #933250;
+  }
+  

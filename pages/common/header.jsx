@@ -1,17 +1,23 @@
 "use client";
-
+import { useRouter } from "next/navigation"
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import "./Header.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLogin = () => {
+    router.push("/LoginPage"); 
+  };
 
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
@@ -27,7 +33,7 @@ export default function Header() {
         </nav>
 
         <div className="nav-right">
-          <button className="login-btn">Login</button>
+          <button className="login-btn" onClick={handleLogin}>Login</button>
           <button className="signup-btn">Sign Up</button>
         </div>
 
@@ -45,7 +51,7 @@ export default function Header() {
           <a href="#">Products</a>
           <a href="#">Blog</a>
           <a href="#">About Us</a>
-          <button className="login-btn">Login</button>
+          <button className="login-btn" onClick={handleLogin}>Login</button>
           <button className="signup-btn">Sign Up</button>
         </div>
       )}

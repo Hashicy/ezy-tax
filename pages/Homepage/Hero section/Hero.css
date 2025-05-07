@@ -21,8 +21,8 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 60px 20px;
-  background: linear-gradient(45deg, #ffd5a6, #ff9f8e, #ffcc99, #ff8364); /* Pastel orange and red gradient */
-  background-size: 400% 400%; /* Ensures the gradient spans across the whole area */
+  background: linear-gradient(45deg, #ffd5a6, #ff9f8e, #ffcc99, #ff8364,#5cda14 ); /* Pastel orange and red gradient */
+  background-size: 500% 500%; /* Ensures the gradient spans across the whole area */
   animation: gradientMove 15s ease infinite; /* Animation to move the gradient */
   text-align: center;
   position: relative;

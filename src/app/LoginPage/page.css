@@ -1,73 +1,67 @@
-.login-container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #ff9a8b, #ff6a88, #ff99ac);
-    animation: bgShift 10s ease infinite;
-    background-size: 400% 400%;
-  }
-  
-  @keyframes bgShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
-  .login-box {
-    background-color: white;
-    padding: 40px 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .login-box h2 {
-    text-align: center;
-    margin-bottom: 24px;
-    color: #333;
-  }
-  
-  .login-box label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 500;
-    color: #555;
-  }
-  
-  .login-box input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-  }
-  
-  .login-box button {
-    width: 100%;
-    background-color: #ff6a88;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .login-box button:hover {
-    background-color: #e05570;
-  }
-  
-  .signup-link {
-    text-align: center;
-    margin-top: 16px;
-    font-size: 0.9rem;
-  }
-  
-  .signup-link a {
-    color: #ff6a88;
-    text-decoration: none;
-  }
-  
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f77062, #fe5196);
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-card {
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.login-card p {
+  margin-bottom: 2rem;
+  color: #777;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #fe5196;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-card button:hover {
+  background-color: #f43f71;
+}
+
+.signup-redirect {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.signup-redirect a {
+  color: #fe5196;
+  text-decoration: none;
+  font-weight: bold;
+}

@@ -3,44 +3,42 @@
 import { useState } from "react";
 import "./page.css";
 
+
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Logging in:", email, password);
+    alert(`Email: ${email}\nPassword: ${password}`);
   };
 
   return (
-    <div className="login-container">
-      <form className="login-box" onSubmit={handleLogin}>
-        <h2>Login to EZY Tax</h2>
-
-        <label>Email</label>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-
-        <label>Password</label>
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-
-        <button type="submit">Login</button>
-
-        <p className="signup-link">
-          Don’t have an account? <a href="/signup">Sign up</a>
+    <div className="login-wrapper">
+      <div className="login-card">
+        <h2>Welcome Back 👋</h2>
+        <p>Login to your EZY Tax account</p>
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+        <p className="signup-redirect">
+          Don't have an account? <a href="/signup">Sign up</a>
         </p>
-      </form>
+      </div>
     </div>
   );
 }

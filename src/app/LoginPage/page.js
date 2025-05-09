@@ -36,7 +36,7 @@ export default function LoginPage() {
           <button type="submit">Login</button>
         </form>
         <p className="signup-redirect">
-          Don't have an account? <a href="/signup">Sign up</a>
+          Don't have an account? <a href="/SignUpPage">Sign up</a>
         </p>
       </div>
     </div>

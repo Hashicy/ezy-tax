@@ -18,6 +18,9 @@ export default function Header() {
   const handleLogin = () => {
     router.push("/LoginPage"); 
   };
+  const handleSignUp= () => {
+    router.push("/SignUpPage"); 
+  }
 
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
@@ -34,7 +37,7 @@ export default function Header() {
 
         <div className="nav-right">
           <button className="login-btn" onClick={handleLogin}>Login</button>
-          <button className="signup-btn">Sign Up</button>
+          <button className="signup-btn" onClick={handleSignUp}>Sign Up</button>
         </div>
 
         <button
@@ -52,7 +55,7 @@ export default function Header() {
           <a href="#">Blog</a>
           <a href="#">About Us</a>
           <button className="login-btn" onClick={handleLogin}>Login</button>
-          <button className="signup-btn">Sign Up</button>
+          <button className="signup-btn" onClick={handleSignUp}>Sign Up</button>
         </div>
       )}
     </header>

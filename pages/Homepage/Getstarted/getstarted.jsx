@@ -1,7 +1,13 @@
+"use client";
 import React from 'react';
 import './GetStarted.css';
+import { useRouter } from "next/navigation"
 
 export default function GetStarted() {
+  const router = useRouter();
+  const handleSignUp= () => {
+    router.push("/SignUpPage"); 
+  }
   return (
     <section className="get-started-section">
       <div className="get-started-container">
@@ -9,7 +15,7 @@ export default function GetStarted() {
         <p className="get-started-subtext">
           Let EZY Tax simplify your tax journey with expert guidance and AI-powered solutions.
         </p>
-        <a href="#services" className="get-started-button">Get Started</a>
+        <a onClick={handleSignUp} className="get-started-button">Get Started</a>
       </div>
     </section>
   );

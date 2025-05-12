@@ -1,68 +1,69 @@
-.signup-wrapper {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #f77062, #fe5196);
-    padding: 2rem;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  .signup-card {
-    background: #fff;
-    padding: 3rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    max-width: 420px;
-    width: 100%;
-    text-align: center;
-  }
-  
-  .signup-card h2 {
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  
-  .signup-card p {
-    margin-bottom: 2rem;
-    color: #777;
-  }
-  
-  .signup-card input {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-  }
-  
-  .signup-card button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #fe5196;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .signup-card button:hover {
-    background-color: #f43f71;
-  }
-  
-  .login-redirect {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  .login-redirect a {
-    color: #fe5196;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f77062, #fe5196);
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-card {
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: normal;
+}
+
+.login-card p {
+  margin-bottom: 2rem;
+  color: #777;
+  font-weight: normal;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #fe5196;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-card button:hover {
+  background-color: #f43f71;
+}
+
+.signup-redirect {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.signup-redirect a {
+  color: #fe5196;
+  text-decoration: none;
+  font-weight: bold;
+}

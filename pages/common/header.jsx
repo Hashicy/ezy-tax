@@ -21,6 +21,9 @@ export default function Header() {
   const handleSignUp= () => {
     router.push("/SignUpPage"); 
   }
+  const AboutUs= () => {
+    router.push("/AboutUs"); 
+  }
 
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
@@ -32,7 +35,7 @@ export default function Header() {
           <a href="#">Home</a>
           <a href="#">Products</a>
           <a href="#">Blog</a>
-          <a href="#">About Us</a>
+          <a onClick={AboutUs} href="#">About Us</a>
         </nav>
 
         <div className="nav-right">

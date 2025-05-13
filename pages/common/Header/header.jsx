@@ -29,7 +29,7 @@ export default function Header({pageupd}) {
         <div className="logo">Ezy-tax</div>
 
         <nav className="nav-center">
-          <a href="#" onClick={()=>pageupd("HomePage")}>Home</a>
+          <a href="#" onClick={()=>pageupd("Home")}>Home</a>
           <a href="#" onClick={()=>pageupd("Products")}>Products</a>
           <a href="#" onClick={()=>pageupd("Blog")}>Blog</a>
           <a href="#" onClick={()=>pageupd("About Us")}>About Us</a>

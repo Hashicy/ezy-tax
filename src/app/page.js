@@ -6,7 +6,7 @@ import AboutPage from "../../pages/AboutUs/AboutPage";
 import { useState } from "react";
 
 export default function Home() {
-  const [page,pageupd]=useState("AboutUs")
+  const [page,pageupd]=useState("Home")
   return (
     <>
     <Header pageupd={pageupd}/>

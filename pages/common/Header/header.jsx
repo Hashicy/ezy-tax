@@ -1,10 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation"
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import "./Header.css";
 
-export default function Header() {
+export default function Header({pageupd}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
@@ -21,9 +20,7 @@ export default function Header() {
   const handleSignUp= () => {
     router.push("/SignUpPage"); 
   }
-  const AboutUs= () => {
-    router.push("/AboutUs"); 
-  }
+
 
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
@@ -32,10 +29,10 @@ export default function Header() {
         <div className="logo">Ezy-tax</div>
 
         <nav className="nav-center">
-          <a href="#">Home</a>
-          <a href="#">Products</a>
-          <a href="#">Blog</a>
-          <a onClick={AboutUs} href="#">About Us</a>
+          <a href="#" onClick={()=>pageupd("HomePage")}>Home</a>
+          <a href="#" onClick={()=>pageupd("Products")}>Products</a>
+          <a href="#" onClick={()=>pageupd("Blog")}>Blog</a>
+          <a href="#" onClick={()=>pageupd("About Us")}>About Us</a>
         </nav>
 
         <div className="nav-right">
@@ -53,10 +50,10 @@ export default function Header() {
 
       {menuOpen && (
         <div className="mobile-menu">
-          <a href="#">Home</a>
-          <a href="#">Products</a>
-          <a href="#">Blog</a>
-          <a href="#">About Us</a>
+          <a href="#" onClick={()=>pageupd("HomePage")}>Home</a>
+          <a href="#" onClick={()=>pageupd("Products")}>Products</a>
+          <a href="#" onClick={()=>pageupd("Blog")}>Blog</a>
+          <a href="#" onClick={()=>pageupd("About Us")}>About Us</a>
           <button className="login-btn" onClick={handleLogin}>Login</button>
           <button className="signup-btn" onClick={handleSignUp}>Sign Up</button>
         </div>

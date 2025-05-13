@@ -1,6 +1,6 @@
 'use client';
 
-import "./page.css";
+import "./AboutPage.css";
 
 
 export default function AboutPage() {

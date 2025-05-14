@@ -1,69 +1,117 @@
 'use client';
+import { useEffect, useState } from 'react';
+import './AboutPage.css';
 
-import "./AboutPage.css";
+export default function AboutUsPage() {
+  const [clients, setClients] = useState(0);
+  const [years, setYears] = useState(0);
+  const [experts, setExperts] = useState(0);
 
+  useEffect(() => {
+    const animate = (setValue, target) => {
+      let count = 0;
+      const speed = target < 50 ? 100 : 3; // Slower for small numbers
 
-export default function AboutPage() {
+      const interval = setInterval(() => {
+        count++;
+        setValue(count);
+        if (count >= target) clearInterval(interval);
+      }, speed);
+    };
+  
+    animate(setClients, 1500);
+    animate(setYears, 10);
+    animate(setExperts, 25);
+  }, []);
+
   return (
-    <div>
-      <section className="about-us-section">
-        <div className="about-us-container">
-          <h1 className="about-us-heading">About Us</h1>
-          <p className="about-us-description">
-            At EZY Tax, we provide AI-assisted services designed to make tax compliance, appeals, and litigation support more manageable and accessible. Our approach leverages expertise from retired tax officers and cutting-edge technology to guide taxpayers through complex legal processes.
+    <div className="about-page">
+      <section className="about-hero-banner">
+        <div className="about-hero-text">
+          <h1>ABOUT US</h1>
+          <p>Empowering Taxpayers. Building the Nation.</p>
+        </div>
+      </section>
+
+      <section className="about-section about-vision-mission">
+        <div className="section-block">
+          <h2>OUR VISION</h2>
+          <p>
+            To revolutionize tax compliance for every Indian through transparent, tech-driven, and human-centric solutions. We aim to bridge the gap between the taxpayer and the system with empathy and innovation.
           </p>
+        </div>
 
-          <h2 className="about-us-subheading">Our Mission</h2>
-          <p className="about-us-text">
-            Our mission is to simplify the often overwhelming process of tax compliance and litigation. We aim to empower individuals and businesses with personalized, accurate, and reliable support while using AI and human expertise to streamline the process.
+        <div className="section-block">
+          <h2>OUR MISSION</h2>
+          <p>
+            To empower individuals and businesses with AI-backed support, expert guidance, and seamless assistance in scrutiny, appeals, and compliance — ensuring peace of mind at every step.
           </p>
+        </div>
+      </section>
 
-          <h2 className="about-us-subheading">Our Vision</h2>
-          <p className="about-us-text">
-            We envision a world where taxpayers can effortlessly navigate the complex scrutiny and appellate processes, ensuring transparency, fairness, and timely resolutions for all.
-          </p>
+      <section className="about-section stats-section">
+        <h2>OUR IMPACT</h2>
+        <div className="stats">
+          <div className="stat-box">
+            <h3>{clients}+</h3>
+            <p>Taxpayers Served</p>
+          </div>
+          <div className="stat-box">
+            <h3>{years}+</h3>
+            <p>Years of Experience</p>
+          </div>
+          <div className="stat-box">
+            <h3>{experts}+</h3>
+            <p>Expert Advisors</p>
+          </div>
+        </div>
+      </section>
 
-          <h2 className="about-us-subheading">Our Values</h2>
-          <ul className="about-us-values">
-            <li><strong>Integrity:</strong> Upholding the highest ethical standards in everything we do.</li>
-            <li><strong>Innovation:</strong> Continuously leveraging technology to improve the tax compliance experience.</li>
-            <li><strong>Customer-Centricity:</strong> Putting our customers first by providing personalized solutions.</li>
-            <li><strong>Transparency:</strong> Offering clear, straightforward guidance every step of the way.</li>
-          </ul>
+      <section className="about-section about-team">
+        <h2>MEET THE TEAM</h2>
+        <div className="team-members">
+          <div className="team-card">
+            <div className="avatar"></div>
+            <h4>Anil Verma</h4>
+            <p>Retd. Income Tax Commissioner</p>
+          </div>
+          <div className="team-card">
+            <div className="avatar"></div>
+            <h4>Sneha Roy</h4>
+            <p>Head of Compliance Tech</p>
+          </div>
+          <div className="team-card">
+            <div className="avatar"></div>
+            <h4>Ravi Sharma</h4>
+            <p>Lead AI Developer</p>
+          </div>
+        </div>
+      </section>
 
-          <h2 className="about-us-subheading">Meet the Team</h2>
-          <div className="team-container">
-            <div className="team-member">
-    
-              <h3 className="team-member-name">John Doe</h3>
-              <p className="team-member-role">Co-Founder & CEO</p>
-              <p className="team-member-description">
-                John brings years of experience in the tax industry, having worked in various governmental and corporate roles. His leadership and passion for innovation drive the company's commitment to customer-centric services.
-              </p>
-            </div>
+      <section className="about-section about-values">
+        <h2>OUR CORE VALUES</h2>
+        <ul>
+          <li>🛡️ Integrity in Service</li>
+          <li>🤝 Transparency and Trust</li>
+          <li>⚖️ Legal Expertise Simplified</li>
+          <li>💡 Smart, AI-Assisted Guidance</li>
+          <li>🇮🇳 Citizen-Centric Innovation</li>
+        </ul>
+      </section>
 
-
-            <div className="team-member">
-            
-              <h3 className="team-member-name">Jane Smith</h3>
-              <p className="team-member-role">Co-Founder & CTO</p>
-              <p className="team-member-description">
-                Jane is a tech visionary with a deep background in AI and machine learning. She leads the development of our innovative AI-driven solutions, ensuring that our services remain on the cutting edge of technology.
-              </p>
-            </div>
-
-
-            <div className="team-member">
-              
-              <h3 className="team-member-name">Michael Brown</h3>
-              <p className="team-member-role">Tax Expert</p>
-              <p className="team-member-description">
-                Michael is a retired tax officer with over 30 years of experience. His deep expertise in tax law and compliance is a cornerstone of our services, helping our customers navigate even the most complex tax situations.
-              </p>
-            </div>
+      <section className="about-section testimonials">
+        <h2>WHAT OUR USERS SAY</h2>
+        <div className="testimonial-cards">
+          <div className="testimonial">
+            <p>"EZY Tax saved me hours of confusion. Their support during scrutiny was top-notch!"</p>
+            <h5>— Priya Mehra</h5>
+          </div>
+          <div className="testimonial">
+            <p>"Never thought tax issues could be resolved so easily. A blessing for startups!"</p>
+            <h5>— Amit Desai</h5>
           </div>
         </div>
       </section>
     </div>
   );
-};
+}

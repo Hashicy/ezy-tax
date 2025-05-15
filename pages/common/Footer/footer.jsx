@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logo">
-          <h2>EZY Tax</h2>
+          <h2>Ezy-tax</h2>
           <p>Empowering Taxpayers. Building the Nation.</p>
         </div>
 

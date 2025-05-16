@@ -1,6 +1,7 @@
 "use client"
 import "./Hero.css";
 import { useRouter } from "next/navigation"
+import Image from "next/image";
 
 export default function Hero() {
   const router = useRouter();
@@ -18,6 +19,14 @@ export default function Hero() {
 
   return (
     <div className="hero">
+   
+      <Image className="hero-image"
+        src="/hero.png"
+        alt="hero"
+        width={380}
+        height={280}
+      />
+
       <h1>Empowering Taxpayers. Building the Nation.</h1>
       <p>Seamless and Transparent Solutions for Every Indian</p>
       <p className="description">

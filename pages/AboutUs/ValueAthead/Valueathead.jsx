@@ -4,7 +4,6 @@ import "./ValueAtScale.css";
 
 const stats = [
   { value: "₹1,000Cr+", label: "taxes saved per year", icon: "/icons/cloud.png" },
-  { value: "50M+", label: "e-Invoices run-rate", icon: "/icons/invoice.png" },
   { value: "$300B", label: "worth invoices filed", icon: "/icons/factory.png" },
   { value: "$4B+", label: "tax payments in FY20", icon: "/icons/tax.png" },
   { value: "6M+", label: "ITRs filed in 2020", icon: "/icons/itr.png" },

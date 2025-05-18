@@ -1,6 +1,7 @@
 .about-hero-container {
     background: linear-gradient(to bottom right, #ffe7d6, #ffede4); /* pastel-orange gradient */
     padding: 6rem 2rem 4rem; /* Extra top padding for space */
+    min-height: 75vh
   }
   
   .about-content {

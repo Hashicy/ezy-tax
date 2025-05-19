@@ -23,7 +23,7 @@ const teamMembers = [
   {
     name: "Harshita Joshi",
     role: "CTO",
-    image: "https://unsplash.com/@nithyaramanujam",
+    image: "https://dummyjson.com/icon/sophiab/128y",
     twitter: "#",
     linkedin: "#",
     bg: "lightorange"
@@ -31,7 +31,7 @@ const teamMembers = [
   {
     name: "Bhavika Joshi",
     role: "Product Head",
-    image: "https://unsplash.com/@allysonh",
+    image: "https://dummyjson.com/icon/sophiab/128y",
     twitter: "#",
     linkedin: "#",
     bg: "mango"

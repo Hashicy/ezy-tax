@@ -2,16 +2,25 @@
 
 import { useState } from "react";
 import "./page.css";
-
-
-export default function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    alert(`Email: ${email}\nPassword: ${password}`);
-  };
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../firebase/firebaseConfig";
+import { useRouter } from "next/navigation"
+  
+  export default function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(null);
+    const router = useRouter();
+  
+    const handleLogin = async (e) => {
+      e.preventDefault();
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        router.push("/dashboard"); // redirect on successful login
+      } catch (err) {
+        setError("Invalid Login Credentials");
+      }
+    };
 
   return (
     <div className="login-wrapper">
@@ -35,6 +44,7 @@ export default function LoginPage() {
           />
           <button type="submit">Login</button>
         </form>
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <p className="signup-redirect">
           Don't have an account? <a href="/SignUpPage">Sign up</a>
         </p>

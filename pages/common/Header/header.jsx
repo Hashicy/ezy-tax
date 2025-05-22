@@ -31,8 +31,8 @@ export default function Header({pageupd}) {
         <nav className="nav-center">
           <a href="#" onClick={()=>pageupd("Home")}>Home</a>
           <a href="#" onClick={()=>pageupd("Products")}>Products</a>
-          <a href="#" onClick={()=>pageupd("Blog")}>Blog</a>
-          <a href="#" onClick={()=>pageupd("About Us")}>About Us</a>
+          <a href="#" onClick={()=>pageupd("Blogs")}>Blog</a>
+          <a href="#" onClick={()=>pageupd("AboutUs")}>About Us</a>
         </nav>
 
         <div className="nav-right">
@@ -52,8 +52,8 @@ export default function Header({pageupd}) {
         <div className="mobile-menu">
           <a href="#" onClick={()=>pageupd("HomePage")}>Home</a>
           <a href="#" onClick={()=>pageupd("Products")}>Products</a>
-          <a href="#" onClick={()=>pageupd("Blog")}>Blog</a>
-          <a href="#" onClick={()=>pageupd("About Us")}>About Us</a>
+          <a href="#" onClick={()=>pageupd("Blogs")}>Blog</a>
+          <a href="#" onClick={()=>pageupd("AboutUs")}>About Us</a>
           <button className="login-btn" onClick={handleLogin}>Login</button>
           <button className="signup-btn" onClick={handleSignUp}>Sign Up</button>
         </div>

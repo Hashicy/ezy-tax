@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
-export default function Footer() {
+export default function Footer({pageupd}) {
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -14,10 +14,10 @@ export default function Footer() {
           <div className="footer-column">
             <h4>Company</h4>
             <ul>
-              <li><a href="#">About Us</a></li>
+              <li><a onClick={()=>pageupd("AboutUs")} href="#">About Us</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#">Careers</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a onClick={()=>pageupd("Blogs")} href="#">Blog</a></li>
             </ul>
           </div>
           <div className="footer-column">

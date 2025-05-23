@@ -12,6 +12,6 @@ export default function Home() {
     <>
     <Header pageupd={pageupd}/>
     {page=="Home"?<Homepage/>:page=="AboutUs"?<AboutPage/>:<BlogsPage/>}
-    <Footer/>
+    <Footer pageupd={pageupd}/>
     </>
   )}

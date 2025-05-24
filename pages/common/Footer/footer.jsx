@@ -15,7 +15,7 @@ export default function Footer({pageupd}) {
             <h4>Company</h4>
             <ul>
               <li><a onClick={()=>pageupd("AboutUs")} href="#">About Us</a></li>
-              <li><a href="#services">Services</a></li>
+              <li><a onClick={()=>pageupd("Products")} href="#services">Services</a></li>
               <li><a href="#">Careers</a></li>
               <li><a onClick={()=>pageupd("Blogs")} href="#">Blog</a></li>
             </ul>

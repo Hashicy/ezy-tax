@@ -1,0 +1,164 @@
+/* ProductPage.css */
+
+.product-page {
+  padding: 80px 5% 60px;
+  background: #fff8f3;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.product-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.product-hero h1 {
+  font-size: 2.8rem;
+  color: #e2693f;
+}
+
+.product-hero p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-top: 10px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.product-card {
+  background: #ffffff;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  color: #e2693f;
+  font-size: 1.3rem;
+  margin: 12px 0;
+}
+
+.product-card p {
+  color: #333;
+  font-size: 0.95rem;
+  min-height: 60px;
+}
+
+.learn-more {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: #f7905c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.learn-more:hover {
+  background: #e2693f;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal h2 {
+  margin-bottom: 0.75rem;
+  color: #e2693f;
+}
+
+.modal p {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.modal button {
+  padding: 10px 16px;
+  background: #e2693f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.inquiry-form {
+  background: #ffe7d8;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.inquiry-form h2 {
+  text-align: center;
+  color: #d3542a;
+  margin-bottom: 1.5rem;
+}
+
+.inquiry-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.inquiry-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.inquiry-form button {
+  padding: 12px;
+  background: #f7905c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.inquiry-form button:hover {
+  background: #e2693f;
+}

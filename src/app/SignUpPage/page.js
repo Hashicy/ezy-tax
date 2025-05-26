@@ -1,16 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { auth,db } from "../../../firebase/firebaseConfig";
+import Link from "next/link";
+import { auth, db } from "../../../firebase/firebaseConfig"; // Adjust path as needed
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import "./page.css";
 
 export default function SignUpPage() {
   const router = useRouter();
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -25,7 +24,6 @@ export default function SignUpPage() {
       const userCred = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCred.user;
 
-      // Save user details to Firestore
       await setDoc(doc(db, "users", user.uid), {
         uid: user.uid,
         name,
@@ -34,10 +32,11 @@ export default function SignUpPage() {
         createdAt: new Date(),
       });
 
+      console.log("✅ Sign up successful. Redirecting...");
       router.push("/dashboard");
     } catch (err) {
-      console.error(err);
-      setError("Signup failed. Please try again.");
+      console.error("❌ Signup failed:", err);
+      setError(err.message || "Signup failed.");
     }
   };
 
@@ -53,10 +52,10 @@ export default function SignUpPage() {
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           <button type="submit">Sign Up</button>
         </form>
-        {error && <p className="error-msg">{error}</p>}
-        <div className="signup-redirect">
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <p className="signup-redirect">
           Already have an account? <Link href="/LoginPage">Login</Link>
-        </div>
+        </p>
       </div>
     </div>
   );

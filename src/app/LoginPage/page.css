@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+
 .login-wrapper {
   min-height: 100vh;
   display: flex;
@@ -5,7 +7,7 @@
   align-items: center;
   background: linear-gradient(135deg, #f77062, #fe5196);
   padding: 2rem;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .login-card {

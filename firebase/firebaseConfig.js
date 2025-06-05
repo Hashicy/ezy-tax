@@ -3,7 +3,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB-oVLm_rT0FpWS3pbOWGfJ9OsPCLjTWU0",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "ezy-tax-8894c.firebaseapp.com",
   projectId: "ezy-tax-8894c",
   storageBucket: "ezy-tax-8894c.firebasestorage.app",

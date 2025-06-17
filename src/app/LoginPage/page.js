@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation"
       e.preventDefault();
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        router.push("/dashboard"); // redirect on successful login
+        router.push("/dashboard"); 
       } catch (err) {
         setError("Invalid Login Credentials");
       }

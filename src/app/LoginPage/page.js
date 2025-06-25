@@ -25,7 +25,7 @@ import { useRouter } from "next/navigation"
   return (
     <div className="login-wrapper">
       <div className="login-card">
-        <h2>Welcome Back 👋</h2>
+        <h2>Welcome Back</h2>
         <p>Login to your EZY Tax account</p>
         <form onSubmit={handleLogin}>
           <input

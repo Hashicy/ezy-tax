@@ -5,65 +5,96 @@
   align-items: center;
   background: linear-gradient(135deg, #f77062, #fe5196);
   padding: 2rem;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
-.login-card {
-  background: #fff;
-  padding: 3rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  max-width: 400px;
+.login-glass {
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   width: 100%;
+  max-width: 420px;
   text-align: center;
+  color: #fff;
+  animation: fadeInUp 0.6s ease;
 }
 
-.login-card h2 {
-  margin-bottom: 0.5rem;
-  color: #333;
-  font-weight: normal;
+.login-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
 }
 
-.login-card p {
+.login-subtitle {
+  font-size: 1rem;
+  color: #eee;
   margin-bottom: 2rem;
-  color: #777;
-  font-weight: normal;
 }
 
-.login-card input {
+form input {
   width: 100%;
   padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  border: none;
+  border-radius: 10px;
   font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  transition: all 0.2s ease;
 }
 
-.login-card button {
+form input:focus {
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 2px #fe5196;
+}
+
+button[type="submit"] {
   width: 100%;
   padding: 0.75rem;
-  background-color: #fe5196;
+  background: #fe5196;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.login-card button:hover {
-  background-color: #f43f71;
+button[type="submit"]:hover {
+  background: #f43f71;
+  transform: translateY(-2px);
+}
+
+.error-text {
+  color: #ffdede;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
 }
 
 .signup-redirect {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   font-size: 0.9rem;
-  color: #555;
+  color: #f8f8f8;
 }
 
 .signup-redirect a {
-  color: #fe5196;
-  text-decoration: none;
-  font-weight: bold;
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

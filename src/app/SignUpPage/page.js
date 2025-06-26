@@ -3,14 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { auth,db } from "../../../firebase/firebaseConfig";
+import { auth, db } from "../../../firebase/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import "./page.css";
 
 export default function SignUpPage() {
   const router = useRouter();
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -42,20 +41,20 @@ export default function SignUpPage() {
 
   return (
     <div className="login-wrapper">
-      <div className="login-card">
-        <h2>Create Your Account</h2>
-        <p>Sign up to get started with EZY Tax</p>
+      <div className="login-glass">
+        <h1 className="login-title">Create Your Account</h1>
+        <p className="login-subtitle">Sign up to get started with EZY Tax</p>
         <form onSubmit={handleSignup}>
           <input type="text" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)} required />
           <input type="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} required />
           <input type="tel" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} required />
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           <button type="submit">Sign Up</button>
+          {error && <p className="error-text">{error}</p>}
         </form>
-        {error && <p className="error-msg">{error}</p>}
-        <div className="signup-redirect">
+        <p className="signup-redirect">
           Already have an account? <Link href="/LoginPage">Login</Link>
-        </div>
+        </p>
       </div>
     </div>
   );

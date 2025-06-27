@@ -26,7 +26,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard-wrapper">
       <aside className="sidebar">
-        <h2>🧾 TaxMate</h2>
+        <h2>🧾 EzyTax</h2>
         <nav>
           <a href="#">📄 My Cases</a>
           <a href="#">📬 Notices</a>

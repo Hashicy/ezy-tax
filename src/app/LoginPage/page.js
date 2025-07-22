@@ -5,6 +5,8 @@ import "./page.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase/firebaseConfig";
 import { useRouter } from "next/navigation";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../../firebase/firebaseConfig";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -15,10 +17,22 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      router.push("/dashboard");
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      const userDoc = await getDoc(doc(db, "users", user.uid));
+      const userData = userDoc.data();
+      console.log("Fetched User Data:", userData);
+
+
+      if (userData?.isAdmin) {
+        router.push("/admin-dashboard");
+      } else {
+        router.push("/dashboard");
+      }
     } catch (err) {
-      setError("Invalid login credentials");
+      console.error("Login failed", err);
+      setError("Invalid email or password");
     }
   };
 

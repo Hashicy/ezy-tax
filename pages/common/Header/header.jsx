@@ -31,9 +31,8 @@ export default function Header({ pageupd }) {
           <a href="#" onClick={() => pageupd("Products")}>Products</a>
           <a href="#" onClick={() => pageupd("Blogs")}>Blog</a>
           <a href="#" onClick={() => pageupd("AboutUs")}>About Us</a>
-          
           <a href="https://umeedometre.streamlit.app/" target="_blank" rel="noopener noreferrer">
-            Prediction Metre
+            Umeedometre
           </a>
         </nav>
 

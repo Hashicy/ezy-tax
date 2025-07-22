@@ -1,116 +1,110 @@
-.dashboard-wrapper {
-  display: flex;
+/* Base container */
+.dashboard {
   min-height: 100vh;
-    background: linear-gradient(45deg, #ffd5a6, #ff9f8e, #ffcc99);
-  background-size: cover;
-  backdrop-filter: blur(2px);
-
-}
-
-.sidebar {
-  width: 250px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(14px);
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 4px 0 30px rgba(0, 0, 0, 0.05);
-  padding: 2rem 1rem;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-}
-
-.sidebar h2 {
-  font-size: 1.4rem;
-  color: #ffffffdd;
-  margin-bottom: 2rem;
-}
-
-.sidebar nav a {
-  display: block;
-  margin: 1rem 0;
-  color: #fffaf0;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-}
-
-.sidebar nav a:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.dashboard-main {
-  flex-grow: 1;
   padding: 2rem;
+  background: linear-gradient(120deg, #fff1e0, #ffe2d1, #ffc8b2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
-.dashboard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  padding: 1rem 2rem;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+/* Page title */
+.dashboard h1 {
+  font-size: 2rem;
+  color: #e86b4d;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
-.dashboard-header h1 {
-  color: #ffffff;
-  font-size: 1.5rem;
+/* Section styling */
+section {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #f9c7a8;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
-.dashboard-header button {
-  padding: 0.6rem 1.2rem;
-  background-color: rgba(255, 255, 255, 0.25);
+/* Section headers */
+section h2 {
+  font-size: 1.4rem;
+  color: #cc5539;
+  margin-bottom: 1rem;
+}
+
+/* Input and textarea styling */
+section input[type="text"],
+section input[type="datetime-local"],
+section textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #f1b88d;
+  border-radius: 10px;
+  background: #fff8f2;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+}
+
+/* Buttons */
+section button {
+  background-color: #e86b4d;
   color: #fff;
+  padding: 0.6rem 1.2rem;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
 }
 
-.dashboard-header button:hover {
-  background-color: rgba(255, 255, 255, 0.35);
+section button:hover {
+  background-color: #d35c41;
 }
 
-/* Cards Grid */
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+/* List styling */
+section ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 1rem;
 }
 
-/* Individual Card */
-.dashboard-card {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 18px;
-  padding: 1.5rem;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+section li {
+  background: #fff5ee;
+  padding: 0.75rem 1rem;
+  border: 1px solid #f5c9a3;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  color: #444;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.dashboard-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+section li em {
+  font-style: italic;
+  color: #b84829;
+  font-size: 0.9rem;
 }
 
-.dashboard-card h2 {
-  color: #fff;
-  font-size: 1.2rem;
-  margin-bottom: 0.6rem;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+  }
 
-.dashboard-card p {
-  color: #fffefc;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  section {
+    padding: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.2rem;
+  }
+
+  section button {
+    width: 100%;
+  }
 }

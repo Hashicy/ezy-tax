@@ -1,70 +1,152 @@
 "use client";
-
-import { useEffect, useState } from "react";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import "./page.css";
+import { useState, useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../../firebase/firebaseConfig";
 import { useRouter } from "next/navigation";
-import "./page.css";
+import {
+  addTaxQuery,
+  addBlogDraft,
+  addConsultation,
+  fetchUserItems,
+} from "./utils/firestoreQueries";
 
-export default function Dashboard() {
+export default function UserDashboard() {
   const [user, setUser] = useState(null);
+  const [queryText, setQueryText] = useState("");
+  const [blogContent, setBlogContent] = useState("");
+  const [preferredTime, setPreferredTime] = useState("");
+  const [consultationDesc, setConsultationDesc] = useState("");
+
+  const [queries, setQueries] = useState([]);
+  const [blogs, setBlogs] = useState([]);
+  const [consultations, setConsultations] = useState([]);
+
   const router = useRouter();
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => {
-      if (u) setUser(u);
-      else router.push("/LoginPage");
+    const unsub = onAuthStateChanged(auth, async (u) => {
+      if (u) {
+        setUser(u);
+        loadAll(u.uid);
+      } else {
+        router.push("/LoginPage");
+      }
     });
     return () => unsub();
-  }, [router]);
+  }, []);
 
-  const handleLogout = async () => {
-    await signOut(auth);
-    router.push("/");
+  const loadAll = async (uid) => {
+    const [q, b, c] = await Promise.all([
+      fetchUserItems("tax_queries", uid),
+      fetchUserItems("blog_submissions", uid),
+      fetchUserItems("consultations", uid),
+    ]);
+    setQueries(q);
+    setBlogs(b);
+    setConsultations(c);
+  };
+
+  const handleSubmitQuery = async () => {
+    if (!queryText.trim()) return;
+    await addTaxQuery(user.uid, user.displayName || "User", user.email, queryText.trim());
+    setQueryText("");
+    loadAll(user.uid);
+  };
+
+  const handleSubmitBlog = async () => {
+    if (!blogContent.trim()) return;
+    await addBlogDraft(user.uid, user.displayName || "User", user.email, blogContent.trim());
+    setBlogContent("");
+    loadAll(user.uid);
+  };
+
+  const handleSubmitConsultation = async () => {
+    if (!preferredTime || !consultationDesc.trim()) return;
+    await addConsultation(
+      user.uid,
+      user.displayName || "User",
+      user.email,
+      preferredTime,
+      consultationDesc.trim()
+    );
+    setPreferredTime("");
+    setConsultationDesc("");
+    loadAll(user.uid);
   };
 
   return (
-    <div className="dashboard-wrapper">
-      <aside className="sidebar">
-        <h2>🧾 EzyTax</h2>
-        <nav>
-          <a href="#">📄 My Cases</a>
-          <a href="#">📬 Notices</a>
-          <a href="#">🧾 Appeal Status</a>
-          <a href="#">🔔 Notifications</a>
-          <a href="#">💡 Help & Support</a>
-        </nav>
-      </aside>
+    <div className="dashboard">
+      <h1>Welcome, {user?.email}</h1>
 
-      <main className="dashboard-main">
-        <header className="dashboard-header">
-          <h1>Hello, {user?.email}</h1>
-          <button onClick={handleLogout}>Logout</button>
-        </header>
+      <section>
+        <h2>✍️ Add Tax Query</h2>
+        <input
+          type="text"
+          value={queryText}
+          onChange={(e) => setQueryText(e.target.value)}
+          placeholder="Your tax query..."
+        />
+        <button onClick={handleSubmitQuery}>Submit Query</button>
+      </section>
 
-        <div className="dashboard-grid">
-          <div className="dashboard-card">
-            <h2>📄 My Cases</h2>
-            <p>Track the progress of your ongoing scrutiny or appellate cases in real time.</p>
-          </div>
-          <div className="dashboard-card">
-            <h2>📬 Notices</h2>
-            <p>Review and respond to tax notices efficiently with AI support.</p>
-          </div>
-          <div className="dashboard-card">
-            <h2>🧾 Appeal Status</h2>
-            <p>View status updates for cases filed before CIT(A), ITAT, or High Court.</p>
-          </div>
-          <div className="dashboard-card">
-            <h2>💡 Help & Support</h2>
-            <p>Connect with experts or raise a query related to your tax issue.</p>
-          </div>
-          <div className="dashboard-card">
-            <h2>🔔 Notifications</h2>
-            <p>Stay updated with new notices, deadlines, and feature updates.</p>
-          </div>
-        </div>
-      </main>
+      <section>
+        <h2>📰 Submit Blog Idea or Draft</h2>
+        <textarea
+          rows={4}
+          value={blogContent}
+          onChange={(e) => setBlogContent(e.target.value)}
+          placeholder="Your blog idea or draft..."
+        />
+        <button onClick={handleSubmitBlog}>Submit Blog</button>
+      </section>
+
+      <section>
+        <h2>📞 Request Consultation</h2>
+        <input
+          type="datetime-local"
+          value={preferredTime}
+          onChange={(e) => setPreferredTime(e.target.value)}
+        />
+        <textarea
+          rows={2}
+          value={consultationDesc}
+          onChange={(e) => setConsultationDesc(e.target.value)}
+          placeholder="What do you want help with?"
+        />
+        <button onClick={handleSubmitConsultation}>Request</button>
+      </section>
+
+      <section>
+        <h2>📜 My Queries</h2>
+        <ul>
+          {queries.map((q) => (
+            <li key={q.id}>
+              {q.query} — <em>{q.status}</em>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>📰 My Blog Submissions</h2>
+        <ul>
+          {blogs.map((b) => (
+            <li key={b.id}>{b.blogContent}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>📅 My Consultation Requests</h2>
+        <ul>
+          {consultations.map((c) => (
+            <li key={c.id}>
+              {c.preferredTime} — {c.description} — <em>{c.status}</em>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }

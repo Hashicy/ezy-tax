@@ -88,34 +88,3 @@ main h2 {
   background: #ffffff;
   color: #000;
 }
-
-
-.add-query-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.add-query-form input {
-  padding: 0.7rem 1rem;
-  border: 1px solid #f7b48f;
-  border-radius: 10px;
-  width: 200px;
-  background: #fffaf6;
-}
-
-.add-query-form button {
-  background-color: #e86b4d;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.4rem;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.add-query-form button:hover {
-  background-color: #cc5e3f;
-}

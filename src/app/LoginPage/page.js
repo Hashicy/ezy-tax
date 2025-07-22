@@ -15,26 +15,31 @@ export default function Login() {
   const router = useRouter();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
+  e.preventDefault();
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
 
-      const userDoc = await getDoc(doc(db, "users", user.uid));
-      const userData = userDoc.data();
-      console.log("Fetched User Data:", userData);
-
-
-      if (userData?.isAdmin) {
-        router.push("/admin-dashboard");
-      } else {
-        router.push("/dashboard");
-      }
-    } catch (err) {
-      console.error("Login failed", err);
-      setError("Invalid email or password");
+    if (user.email === "admin@gmail.com") {
+      router.push("/admin-dashboard");
+      return;
     }
-  };
+
+    const userDoc = await getDoc(doc(db, "users", user.uid));
+    const userData = userDoc.data();
+    console.log("Fetched User Data:", userData);
+
+    if (userData?.isAdmin) {
+      router.push("/admin-dashboard");
+    } else {
+      router.push("/dashboard");
+    }
+  } catch (err) {
+    console.error("Login failed", err);
+    setError("Invalid email or password");
+  }
+};
+
 
   return (
     <div className="login-wrapper">

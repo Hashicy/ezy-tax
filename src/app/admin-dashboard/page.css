@@ -1,0 +1,121 @@
+.admin-dashboard {
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(120deg, #fff1e0, #ffe2d1, #ffc8b2);
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Header */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #f9c7a8;
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.admin-header h1 {
+  font-size: 1.8rem;
+  color: #e86b4d;
+}
+
+.admin-header button {
+  padding: 0.6rem 1.2rem;
+  background-color: #e86b4d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.admin-header button:hover {
+  background-color: #d35c41;
+}
+
+/* Main Heading */
+main h2 {
+  font-size: 1.5rem;
+  color: #cc5539;
+  margin-bottom: 1.5rem;
+}
+
+/* Table Styling */
+.query-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+
+.query-table th,
+.query-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f5c9a3;
+}
+
+.query-table th {
+  background: #ffe5cc;
+  color: #b84829;
+  font-weight: 600;
+}
+
+.query-table tr:hover {
+  background-color: #fff1e6;
+}
+
+.query-table select {
+  padding: 0.4rem 0.7rem;
+  background: #fff8f2;
+  border: 1px solid #f1b88d;
+  border-radius: 6px;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.query-table option {
+  background: #ffffff;
+  color: #000;
+}
+
+
+.add-query-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.add-query-form input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #f7b48f;
+  border-radius: 10px;
+  width: 200px;
+  background: #fffaf6;
+}
+
+.add-query-form button {
+  background-color: #e86b4d;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.add-query-form button:hover {
+  background-color: #cc5e3f;
+}

@@ -1,7 +1,6 @@
 .dashboard-wrapper {
   display: flex;
   min-height: 100vh;
-  font-family: "Segoe UI", sans-serif;
     background: linear-gradient(45deg, #ffd5a6, #ff9f8e, #ffcc99);
   background-size: cover;
   backdrop-filter: blur(2px);

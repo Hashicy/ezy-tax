@@ -88,3 +88,64 @@ main h2 {
   background: #ffffff;
   color: #000;
 }
+
+
+/* Search box styling */
+.search-box {
+  padding: 0.6rem 1rem;
+  border: 1px solid #f9c7a8;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #fff8f2;
+  color: #333;
+  margin: 0 1rem;
+  flex-grow: 1;
+}
+
+/* Logout button (optional override) */
+.logout-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #e86b4d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #d35c41;
+}
+
+/* Add Query Form */
+.add-query-form {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.add-query-form input {
+  padding: 0.8rem;
+  border: 1px solid #f1b88d;
+  border-radius: 10px;
+  background: #fff8f2;
+  font-size: 1rem;
+}
+
+.add-query-form button {
+  grid-column: span 3;
+  background-color: #e86b4d;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-query-form button:hover {
+  background-color: #d35c41;
+}
